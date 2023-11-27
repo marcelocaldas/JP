@@ -7,8 +7,8 @@ networks:
     driver: bridge
 services:
   web:
-    image: hacklab/mapasculturais-nginx:v1.0
-    #image: nginx-latest
+    #image: hacklab/mapasculturais-nginx:v1.0
+    image: nginx-latest
     restart: always
     volumes:
      ##### versão sem ssl
@@ -20,9 +20,9 @@ services:
     #  - ./docker-data/certs/www:/var/www/certbot não precisa
      - ./docker-data/public-files:/var/www/html/files
      - ./docker-data/assets:/var/www/html/assets
-#    ports:
- #    - "80:80"
- #    - "443:443"
+    ports:
+     - "80:80"
+     - "443:443"
     environment:
      - MAPAS_HOSTNAME=mapas
     depends_on:

@@ -64,7 +64,7 @@ version: '3'
       - SESSIONS_SAVE_PATH=tcp://redis:6379 
     depends_on:
       - db
-        # networks:
+         networks:
       - proxy-reverso
 
   db:
@@ -75,8 +75,8 @@ version: '3'
       - POSTGRES_USER=mapas
       - POSTGRES_DB=mapas
       - POSTGRES_DB_TEST=mapasculturais_test
-        #  networks:
-        # - proxy-reverso
+          networks:
+         - proxy-reverso
     ports:
       - "5433:5433"
     volumes:

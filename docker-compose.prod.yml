@@ -36,7 +36,8 @@ services:
       dockerfile: compose/production/Dockerfile
     restart: always
     ports:
-      - "9000:9000"
+     # - "9000:9000"
+      - "127.0.0.1:9000:9000"    
     volumes:
       - ./.env:/.env
       - ./docker-data/assets:/var/www/html/assets
